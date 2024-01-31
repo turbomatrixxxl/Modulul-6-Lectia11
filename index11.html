@@ -3,22 +3,46 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lectia-11-Elementele-unui-formular</title>
 
+    <!-- Mai întâi normalizarea -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css"
+    />
+
+    <!-- Cale relativa la fisier stiluri CSS -->
     <link rel="stylesheet" href="./css/styles11.css" />
+
+    <title>Lectia-11-Elementele-unui-formular</title>
   </head>
   <body>
     <header>
       <nav>
         <ol style="list-style: upper-roman">
-          <li><a href="#formulare">Formulare</a></li>
-          <li><a href="#form">Elementul (form)</a></li>
-          <li><a href="#label">Elementul (label)</a></li>
-          <li><a href="#input">Elementul (input)</a></li>
-          <li><a href="#textarea">Elementul (textarea)</a></li>
-          <li><a href="#select">Elementul (select)</a></li>
-          <li><a href="#datalist">Elementul (datalist)</a></li>
-          <li><a href="#campurilor">Gruparea campurilor</a></li>
+          <li>
+            <a href="#formulare"><b>Formulare</b></a>
+          </li>
+          <li>
+            <a href="#form"><b>Elementul (form)</b></a>
+          </li>
+          <li>
+            <a href="#label"><b>Elementul (label)</b></a>
+          </li>
+          <li>
+            <a href="#input"><b>Elementul (input)</b></a>
+          </li>
+          <li>
+            <a href="#textarea"><b>Elementul (textarea)</b></a>
+          </li>
+          <li>
+            <a href="#select"><b>Elementul (select)</b></a>
+          </li>
+          <li>
+            <a href="#datalist"><b>Elementul (datalist)</b></a>
+          </li>
+          <li>
+            <a href="#campurilor"><b>Gruparea campurilor</b></a>
+          </li>
         </ol>
       </nav>
     </header>
@@ -28,127 +52,917 @@
       <!-- I.Formulare  -->
       <section>
         <h2 id="formulare">I.Formulare</h2>
-
-        <!-- Exemplu -->
-        <div>
-          <p><b>Exemplu :</b></p>
-        </div>
+        <p>
+          Formularele vă permit să obțineți informații de la vizitatorii unei
+          pagini web. Liste de corespondență, detalii de contact, profiluri de
+          utilizatori, autentificare și înregistrare, comentarii pe blog, toate
+          aceste informații sunt colectate prin utilizarea formularelor și a
+          elementelor acestora.
+        </p>
+        <p>
+          Formularele sunt pagini prin care magazinele online își vând
+          produsele, iar serviciile online sunt plătite pentru ceea ce oferă.
+          Companiile măsoară succesul site-ului lor web prin eficacitatea
+          formularelor, deoarece răspund la întrebări precum "Câți clienți
+          potențiali a trimis site-ul nostru echipei de vânzări?" și "Câți
+          oameni s-au înscris săptămâna trecută pentru produsul nostru?". Prin
+          urmare, formularele sunt în mod constant refactorizate și
+          îmbunătățite.
+        </p>
+        <p>
+          Un formular HTML funcțional e compus din două părți: o interfață a
+          utilizatorului și serverul (backend). Primul reprezintă aspectul
+          formularului (marcaj și design), iar al doilea este codul de
+          prelucrare a datelor introduse (validare, stocare date, trimitere
+          e-mail etc.).
+        </p>
+        <p><b>ATENTIE !!!</b></p>
+        <p>
+          Acum sarcina noastră este să învățăm cum să facem o interfață, cu alte
+          cuvinte, cum să creem marcajul și să stilizăm elementele unui
+          formular. Studierea procesării datelor nu face parte din cadrul
+          acestui curs de creare a unui marcaj web și necesită cunoașterea unor
+          limbaje de programare pentru browser și server, precum JavaScript,
+          Node.js, Python, PHP și altele.
+        </p>
       </section>
 
       <!-- II.Elementul (form)  -->
       <section>
         <h2 id="form">II.Elementul (form)</h2>
-        <p></p>
-
-        <!-- Exemplu -->
-        <div>
-          <p><b>Exemplu :</b></p>
-        </div>
+        <p>
+          Elementul (form) este un container pentru un grup de elemente înrudite
+          al unui formular. De exemplu, un formular de recenzii, înregistrarea,
+          plata pentru o comandă într-un magazin online. Fiecare dintre aceste
+          componente ale interfeței e format dintr-un grup de elemente
+          interactive grupate printr-un formular.
+        </p>
+        <p><b>index.html</b></p>
+        <p>
+          (form name="signup_form" autocomplete="on" novalidate) <br />
+          (label) <br />
+          Email <br />
+          (input type="email" name="email" /) <br />
+          (/label) <br />
+          <br />
+          (label) <br />
+          Password <br />
+          (input type="password" name="password" /) <br />
+          (/label) <br />
+          <br />
+          (button type="submit")Submit(/button) (/form)
+        </p>
+        <p>
+          Elementul (form) nu are atribute obligatorii, de aceea în exemplul dat
+          vă sunt prezentate unele atribute utile, dar opționale.
+        </p>
+        <ul>
+          <li>
+            <b>name</b> – un nume unic al unui formular pe o pagină web curentă.
+            Este folosit atât pe server, cât și pe client la procesarea
+            formularului. Poate conține caractere din alfabetul englez din orice
+            registru, numere, litere de subliniere și liniuțe. În nume nu poate
+            fi folosit spațiul.
+          </li>
+          <li>
+            <b>autocomplete</b> – determină dacă browserul poate completa
+            automat valorile tuturor elementelor unui formular. Are doar două
+            valori, off și on. Acest comportament poate fi modificat pentru
+            fiecare element al formularului.
+          </li>
+          <li>
+            <b>novalidate</b> – atribut de verificare, nu are valoare. Spune
+            browserului să nu verifice validitatea datelor introduse la
+            trimiterea formularului. Dacă atributul nu este specificat, se
+            efectuează validarea clientului.
+          </li>
+        </ul>
+        <p><b>TRIMITEREA UNUI FORMULAR </b></p>
+        <p>
+          Un formular este "trimis" iar pagina curentă este reîncărcată, atunci
+          când se dă click pe (button type="submit") sau se apasă tasta Enter în
+          orice câmp al formularului. Acesta este un comportament implicit și
+          poate fi modificat prin utilizarea JavaScript.
+        </p>
       </section>
 
       <!-- III.Elementul (label)  -->
       <section>
         <h2 id="label">III.Elementul (label)</h2>
-        <p></p>
-
-        <!-- Exemplu -->
-        <div>
-          <p><b>Exemplu :</b></p>
-        </div>
+        <p>
+          Elementul (label) leagă o descriere (etichetă) de un element al
+          formularului interactiv. Textul etichetei este legat de element, nu
+          numai vizual, ci și logic. De exemplu, un cititor de ecran
+          (screenreader) anunță textul unei etichete atunci când utilizatorul
+          pune accentul pe elementul legat. Când se dă click pe etichetă,
+          elementul în cauză va obține automat un efect de focalizare.
+        </p>
+        <p>
+          Dacă un element al formularului, cum ar fi un câmp de intrare, este
+          imbricat în (<b>label</b>), atunci legătura este creată automat de
+          browser. atunci legătura este creată automat de browser. Dând click pe
+          textul "<b>E-mail</b>" sau "<b>Parolă</b>", se va pune accentul pe
+          câmpul de introducere corespunzător.
+        </p>
+        <p><b>index.html</b></p>
+        <p>
+          (form) <br />
+          (label) <br />
+          Email <br />
+          (input type="email" name="email" /) <br />
+          (/label) <br />
+          <br />
+          (label) <br />
+          Password <br />
+          (input type="password" name="password" /) <br />
+          (/label) <br />
+          <br />
+          (button type="submit")Submit(/button) <br />
+          (/form)
+        </p>
+        <p>
+          Dacă elementul formularului nu este imbricat în (<b>label</b>),
+          trebuie să le legați manual prin atributul <b>id</b> al elementului
+          legat și atributul for al etichetei.
+        </p>
+        <p>
+          (form) <br />
+          (label for="user_email")Email(/label) <br />
+          (input type="email" name="email" id="user_email" /) <br />
+          <br />
+          (label for="user_password")Password(/label) <br />
+          (input type="password" name="password" id="user_password" /) <br />
+          <br />
+          (button type="submit")Submit(/button) <br />
+          (/form)
+        </p>
       </section>
 
       <!-- IV.Elementul (input)  -->
       <section>
         <h2 id="input">IV.Elementul (input)</h2>
-        <p></p>
+        <p>
+          Acesta este un element universal pentru crearea diverselor câmpuri de
+          introducere. Tipul câmpului este determinat de atributul type, a cărui
+          valoare implicită este text – un câmp text cu o singură linie care
+          acceptă orice caractere.
+        </p>
+        <p>(input type="text" name="username" /)</p>
+        <p>
+          Din punct de vedere conceptual, tag-ul <b>(input)</b> reprezintă o
+          intrare într-un dicționar care este trimisă serverului. Atributul name
+          specifică numele acestei intrări, iar valoarea este ceea ce a introdus
+          utilizatorul. Într-un formular, numele câmpului trebuie să fie unic.
+          Valoarea atributului name este folosită și în timpul procesării
+          formularului în JavaScript.
+        </p>
         <ol>
           <li>
             <h3 id="autofocus">Atributul autofocus</h3>
+            <p>
+              Dacă un câmp de introducere are setat atributul de focalizare
+              automat, acesta devine automat focalizat la deschiderea paginii,
+              fiind posibilă introducerea imediată a textului. În mod implicit,
+              acest atribut nu este setat pentru niciun câmp.
+            </p>
+            <p>
+              Deoarece mai multe elemente nu pot fi focalizate simultan,
+              atributul este setat câmpului de la care utilizatorul ar trebui să
+              înceapă să completeze formularul. Atributul autofocus este de tip
+              boolean, ceea ce înseamnă că nu este atribuită nicio valoare, ci
+              doar un nume.
+            </p>
+
+            <!-- Exemplu -->
+            <div class="body body1">
+              <p><b>Exemplu :</b></p>
+              <form>
+                <label>
+                  First name
+                  <input type="text" name="firstName" autofocus />
+                </label>
+                <label>
+                  Last name
+                  <input type="text" name="lastName" />
+                </label>
+                <button type="submit">Submit</button>
+              </form>
+            </div>
+            <p><b>UTIL :</b></p>
+            <p>
+              Din cauza unor caracteristici specifice ale platformei cu exemple,
+              câmpul de introducere a numelui utilizatorului nu primește focusul
+              în momentul încărcării paginii. Funcționarea acestui cod poate fi
+              verificată în propriul editor.
+            </p>
           </li>
           <li>
             <h3 id="placeholder">Atributul placeholder</h3>
+            <p>
+              Acesta permite afișarea unui text sugestiv cu privire la datele
+              care trebuie introduse în câmp atunci când elementul (<b>input</b>
+              /) este gol. Acest atribut poate fi folosit în orice element al
+              formularului cu o introducere de text.
+            </p>
+
+            <!-- Exemplu -->
+            <div class="body body1">
+              <p><b>Exemplu :</b></p>
+              <form>
+                <label>
+                  Username
+                  <input
+                    type="text"
+                    name="username"
+                    placeholder="Jacob Mercer"
+                  />
+                </label>
+                <button type="submit">Submit feedback</button>
+              </form>
+            </div>
+            <p><b>UTIL:</b></p>
+            <p>
+              Textul sugestiv nu înlocuiește un (<b>label</b>) bun, ci îl
+              completează cu o demonstrație de tip de date care trebuie
+              introduse.
+              <a
+                href="https://www.youtube.com/watch?v=jrigp2L-P-0&feature=youtu.be"
+                ><b>Placeholders in Form Fields Are Harmful</b></a
+              >
+              – videoclipul este despre proiectarea corectă a elementelor de
+              formular accesibile și ușor de utilizat, cu note și sugestii.
+            </p>
           </li>
           <li>
             <h3 id="mail">E-mail și Parolă</h3>
+            <p>
+              Valoarea atributului type afectează tipul câmpului, setul de
+              caractere care pot fi introduse în acesta și validarea ulterioară
+              a valorii. De exemplu, când browserul unui smartphone detectează
+              un câmp de tip email, acesta afișează utilizatorului o tastatură
+              specială pentru introducerea unui e-mail cu acces ușor la simbolul
+              @. Browserul poate oferi și opțiunea de a selecta o adresă de
+              e-mail din agenda de adrese.
+            </p>
+
+            <!-- Exemplu -->
+            <div class="body body1">
+              <p><b>Exemplu :</b></p>
+              <form class="form">
+                <label class="label">
+                  Email
+                  <input class="input" type="email" name="email" />
+                </label>
+                <label class="label">
+                  Password
+                  <input
+                    class="input"
+                    type="password"
+                    name="pwd"
+                    minlength="5"
+                    maxlength="12"
+                  />
+                </label>
+                <label class="label">
+                  Phone number
+                  <input class="input" type="tel" name="phone" />
+                </label>
+                <button type="submit">Register</button>
+              </form>
+            </div>
+            <p>
+              Pentru tipul password, valoarea introdusă a parolei va fi
+              înlocuită vizual cu marcaje din motive de securitate. Atributele
+              <b>minLength</b> și <b>maxLength</b> sunt opționale. Acestea vă
+              permit să limitați numărul de caractere care pot fi introduse
+              într-un câmp.
+            </p>
           </li>
           <li>
             <h3 id="radio">Butoane radio (comutatoare)</h3>
+            <p>
+              Dacă setați atributul type la radio – câmpul de introducere se va
+              transforma într-un buton radio (radio button). Butoanele radio
+              sunt întotdeauna în grupuri, permițând utilizatorului să selecteze
+              <b>una dintre o mulțime</b> de valori predefinite.
+            </p>
+            <p>
+              Fiecare buton radio din grup trebuie să aibă aceeași valoare
+              pentru atributul <b>name</b>, în caz contrar browserul nu va ști
+              că fac parte dintr-un grup.
+            </p>
+
+            <!-- Exemplu -->
+            <div class="body body1">
+              <p><b>Exemplu :</b></p>
+              <form>
+                <p>Choose a color:</p>
+                <div class="radio">
+                  <label class="label1">
+                    <input type="radio" name="color" value="red" />
+                    Red
+                  </label>
+                  <label class="label1">
+                    <input type="radio" name="color" value="white" checked />
+                    White
+                  </label>
+                  <label class="label1">
+                    <input type="radio" name="color" value="green" />
+                    Green
+                  </label>
+                </div>
+
+                <p>Select size:</p>
+                <div class="radio">
+                  <label class="label1">
+                    <input type="radio" name="size" value="sm" />
+                    Small
+                  </label>
+                  <label class="label1">
+                    <input type="radio" name="size" value="md" />
+                    Medium
+                  </label>
+                  <label class="label1">
+                    <input type="radio" name="size" value="lg" checked />
+                    Large
+                  </label>
+                </div>
+              </form>
+            </div>
+            <p>
+              Spre deosebire de câmpurile de text, în butoanele radio nu se pot
+              introduce date, astfel fiecare dintre ele trebuie să aibă un
+              atribut <b>value</b> specificat. Această valoarea va fi transmisă
+              serverului atunci când utilizatorul trimite un formular.
+            </p>
+            <p>
+              Atributul boolean <b>checked</b> specifică ce buton radio va fi
+              selectat (bifat) în mod implicit. Într-un grup de butoane radio,
+              poate exista doar un singur element în starea checked.
+            </p>
           </li>
           <li>
             <h3 id="checkbox">Checkbox-uri (casete de validare)</h3>
+            pCasetele de validare (checkbox) sunt similare cu butoanele radio,
+            dar vă permit să selectați un număr arbitrar de valori,
+            <b>adică multe dintre o mulțime</b>. Ar putea exista un grup întreg
+            de casete de validare, de exemplu, pentru a alege hobby-uri, sau
+            doar una, de exemplu, acceptarea acordului de utilizare în timpul
+            înregistrării.
+
+            <!-- Exemplu -->
+            <div class="body body1">
+              <p><b>Exemplu :</b></p>
+              <form>
+                <p>What are your hobbies?</p>
+                <div class="radio">
+                  <label class="label1">
+                    <input type="checkbox" name="hobby" value="music" checked />
+                    Music
+                  </label>
+                  <label class="label1">
+                    <input
+                      type="checkbox"
+                      name="hobby"
+                      value="sports"
+                      checked
+                    />
+                    Sports
+                  </label>
+                  <label class="label1">
+                    <input type="checkbox" name="hobby" value="reading" />
+                    Reading
+                  </label>
+                </div>
+              </form>
+            </div>
           </li>
           <li>
             <h3 id="numere">Numere</h3>
+            <p>
+              Câmpurile obișnuite de text acceptă literalmente orice: cifre,
+              litere, spații, semne de punctuație etc. Pentru a permite numai
+              introducerea numerelor, cu opțiunea de a limita intervalul, este
+              utilizat tipul de câmp number. La introducerea datelor în acest
+              tip de câmp, browserul ignoră automat toate caracterele, cu
+              excepția numerelor.
+            </p>
+            <p>
+              (label) <br />
+              Age <br />
+              (input type="number" name="age" value="0" min="18" max="120" /)
+              <br />
+              (/label)
+            </p>
+            <p>
+              Desigur, există multe numere care nu sunt potrivite pentru fiecare
+              tip de date numerice. De exemplu, poate fi necesar să se interzică
+              introducerea unor numere prea lungi sau negative. Această problemă
+              este rezolvată prin utilizarea atributelor min și max care
+              definesc limitele de introducere.
+            </p>
+            <p>
+              În mod implicit, câmpurile numerice acceptă numai numere întregi.
+              Acest comportament poate fi modificat prin atributul step, care
+              specifică pasul de schimbare al numărului. Valoarea implicită a
+              pasului este 1.
+            </p>
+
+            <!-- Exemplu -->
+            <div class="body body1">
+              <p><b>Exemplu :</b></p>
+              <form class="numere">
+                <label>
+                  Weight with 0.5 step value:
+                  <input
+                    type="number"
+                    name="weight"
+                    min="0"
+                    max="200"
+                    step="0.5"
+                    value="0"
+                  />
+                </label>
+                <button type="submit">Submit</button>
+              </form>
+            </div>
           </li>
           <li>
             <h3 id="telefon">Numere de telefon</h3>
+            <p>
+              Tipul tel creează un câmp pentru introducerea numerelor de
+              telefon, care poate fi reprezentat într-o varietate de formate. În
+              prezent, singurul beneficiu al utilizării unui câmp tel este
+              afișarea unei tastaturi virtuale pentru introducerea numerelor de
+              telefon în browserele mobile, care conține numere, dar nu litere.
+            </p>
+            <p>
+              (form) <br />
+              (label) <br />
+              Phone number <br />
+              (input type="tel" name="phone_number" /) <br />
+              (/label) <br />
+              <br />
+              (button type="submit")Submit(/button) <br />
+              (/form)
+            </p>
+            <p><b>EXEMPLU :</b></p>
+            <div class="body1">
+              <form>
+                <label>
+                  Phone number
+                  <input class="numere" type="tel" name="phone_number" />
+                </label>
+                <button type="submit">Submit</button>
+              </form>
+            </div>
           </li>
           <li>
             <h3 id="glisoare">Glisoare</h3>
+            <p>
+              Tipul range este folosit pentru a crea glisoare, cu valori întregi
+              și fracționale. Atributele min și max stabilesc intervalul de
+              valori, iar step controlează pasul. Pentru a seta o valoare, pur
+              și simplu trageți glisorul în poziția dorită între valorile minime
+              și maxime.
+            </p>
+            <p><b>INTERESANT !!!</b></p>
+            <p>
+              Browserele nu oferă niciun feedback vizual cu privire la valoarea
+              setată. Acest lucru se face folosind JavaScript și un marcaj
+              suplimentar.
+            </p>
           </li>
           <li>
             <h3 id="datasiora">Data si Ora</h3>
+            <p>
+              Fiecare browser are un calendar încorporat în care utilizatorul
+              poate selecta data și/sau ora necesară. Atributele min și max
+              permit să setați date minime și maxime, atâta timp cât este
+              utilizat formatul corect.
+            </p>
+
+            <!-- Exemplu -->
+            <div class="body body1">
+              <p><b>Exemplu :</b></p>
+              <label>
+                Date
+                <input class="numere" type="date" />
+              </label>
+
+              <label>
+                Time
+                <input class="numere" type="time" />
+              </label>
+
+              <label>
+                Date and time
+                <input class="numere" type="datetime-local" />
+              </label>
+            </div>
+            <p><b>INTERESANT !!!</b></p>
+            <p>
+              Datorită aspectului diferit în diverse browsere și dificultății de
+              a-l schimba prin CSS, în locul calendarului nativ, cel mai des
+              sunt folosite bibliotecile JavaScript gata făcute.
+            </p>
           </li>
         </ol>
-        <!-- Exemplu -->
-        <div>
-          <p><b>Exemplu :</b></p>
-        </div>
       </section>
 
       <!-- V.Elementul (textarea)  -->
       <section>
         <h2 id="textarea">V.Elementul (textarea)</h2>
-        <p></p>
+        <p>
+          Acest element creează un câmp de text cu mai multe linii pentru
+          introducerea unei cantități mari de text. De exemplu, pentru feedback,
+          comentarii, postări pe rețelele de socializare, specificarea
+          detaliilor comenzii etc.
+        </p>
 
         <!-- Exemplu -->
-        <div>
+        <div class="body body1">
           <p><b>Exemplu :</b></p>
+          <form>
+            <label>
+              Username
+              <input
+                class="numere"
+                type="text"
+                name="username"
+                placeholder="Jack Meadows"
+              />
+            </label>
+            <label>
+              Feedback
+              <textarea
+                name="feedback"
+                rows="5"
+                placeholder="Enter your message here..."
+              ></textarea>
+            </label>
+            <button type="submit">Submit</button>
+          </form>
         </div>
+
+        <p>
+          Atributul rows setează numărul de rânduri (înălțime), iar atributul
+          cols setează numărul de coloane (lățimea). În practică, este setat
+          doar atributul rows, iar lățimea elementului este controlată prin CSS.
+        </p>
+        <p>
+          În mod implicit, elementul (textarea) poate fi întins pe orizontală și
+          pe verticală. Pentru a controla capacitatea utilizatorului de a
+          modifica dimensiunea, este utilizată proprietatea CSS <b>resize</b>.
+        </p>
+        <p>resize: both | horizontal | vertical | none</p>
       </section>
 
       <!-- VI.Elementul (select)  -->
       <section>
         <h2 id="select">VI.Elementul (select)</h2>
-        <p></p>
+        <p>
+          Un meniu drop-down este o alternativă la butoanele radio, deoarece, în
+          mod implicit, permite selectarea unuia dintre mai multe opțiuni.
+          Elementul (select) este un meniu drop-down cu atributul name care
+          conține un set de elemente (option) cu atributul value.
+        </p>
+        <p>
+          Textul din interiorul elementului
+          <option>
+            este afișat utilizatorului, iar valoarea atributului value este cea
+            care va fi folosită la trimiterea unui formular.
+          </option>
+        </p>
+
+        <!-- Exemplu -->
+        <div class="body body1">
+          <p><b>Exemplu :</b></p>
+          <label for="size">Size</label>
+          <select id="size" name="size">
+            <option value="xs">Extra Small</option>
+            <option value="s">Small</option>
+            <option value="m" selected>Medium</option>
+            <option value="l">Large</option>
+          </select>
+        </div>
+        <p><b>UTIL :</b></p>
+        <p>
+          În mod implicit, este ales primul element (<b>option</b>) din listă.
+          Acest lucru poate fi schimbat prin setarea opțiunii de atribut boolean
+          selected la opțiunea necesară.
+        </p>
         <ol>
-          <li><h3 id="optiunilor">Gruparea optiunilor</h3></li>
+          <li>
+            <h3 id="optiunilor">Gruparea optiunilor</h3>
+            <p>
+              Uneori este nevoie să împărțiți lista în grupuri separate care nu
+              au legătură între ele. Pentru a realiza acest lucru, se folosește
+              tag-ul <b>&lt;optgroup&gt;</b>Uneori este nevoie să împărțiți
+              lista în grupuri separate care nu au legătură între ele. Pentru a
+              realiza acest lucru, se folosește tag-ul <b>&lt;optgroup&gt;</b>.
+              Pentru a da un titlu grupului, este folosit atributul label. ).
+              Pentru a da un titlu grupului, este folosit atributul label.
+            </p>
+          </li>
         </ol>
 
         <!-- Exemplu -->
-        <div>
+        <div class="body body1">
           <p><b>Exemplu :</b></p>
+          <label for="month">Month</label>
+          <select name="month" id="month">
+            <optgroup label="Summer">
+              <option value="s6">June</option>
+              <option value="s7">July</option>
+              <option value="s8">August</option>
+            </optgroup>
+
+            <optgroup label="Autumn">
+              <option value="s9">September</option>
+              <option value="s10">October</option>
+              <option value="s11">November</option>
+            </optgroup>
+          </select>
         </div>
       </section>
 
       <!-- VII.Elementul (datalist)  -->
       <section>
         <h2 id="datalist">VII.Elementul (datalist)</h2>
-        <p></p>
+        <p>
+          Completarea automată este o tehnică cunoscută de majoritatea
+          utilizatorilor. La introducerea caracterelor într-un câmp de text,
+          motorul de căutare oferă diverse opțiuni de completare automată. De
+          exemplu, atunci când scrieți un e-mail, serviciul de mail va recomanda
+          o listă de potențiali destinatari.
+        </p>
+        <p>
+          Elementul <b> (datalist) </b> creează o listă de valori predefinite
+          care pot fi selectate în timp ce se introduce text în câmpul asociat.
+          Această listă este ascunsă și devine accesibilă atunci când câmpul de
+          intrare primește focus și se introduce text în acesta. Lista creată de
+          elementul <b> (datalist) </b> este asociată câmpului text prin
+          atributul id. să corespundă cu valoarea atributului list al tag-ului
+          list al tag-ului <b>(input)</b>.
+        </p>
 
         <!-- Exemplu -->
-        <div>
+        <div class="body body1">
           <p><b>Exemplu :</b></p>
+          <label for="fav">Choose your favourite browser</label>
+          <input list="browsers" name="fav" id="fav" />
+
+          <datalist id="browsers">
+            <option>Edge</option>
+            <option>Firefox</option>
+            <option>Chrome</option>
+            <option>Opera</option>
+            <option>Safari</option>
+          </datalist>
+        </div>
+        <p>
+          Elementele <b> (option) </b> pot avea și un atribut value. Acest lucru
+          este util atunci când textul și valoarea opțiunii nu se potrivesc. De
+          exemplu, utilizatorul ar putea să nu cunoască abrevierea unui stat din
+          S.U.A. În meniul derulant, el va vedea o listă cu statele și
+          abrevierile lor, iar când selectează o opțiune, câmpul text va fi
+          completat doar cu valoarea acelei opțiuni.
+        </p>
+
+        <!-- Exemplu -->
+        <div class="body body1">
+          <p><b>Exemplu :</b></p>
+          <label for="state">Choose your state</label>
+          <input type="text" name="state" id="state" list="states" />
+          <datalist id="states">
+            <option value="AL">Alabama</option>
+            <option value="AK">Alaska</option>
+            <option value="AZ">Arizona</option>
+            <option value="AR">Arkansas</option>
+          </datalist>
         </div>
       </section>
 
       <!-- VIII.Gruparea campurilor  -->
       <section>
         <h2 id="campurilor">VIII.Gruparea campurilor</h2>
-        <p></p>
+        <p>
+          Gruparea elementelor conexe face formularele mai ușor de înțeles
+          pentru utilizatori. De asemenea, ajută utilizatorul să se concentreze
+          pe grupuri de câmpuri mici, ordonate, mai degrabă decât să încerce să
+          înțeleagă întregul formular imediat. Gruparea se realizează atât
+          vizual în interfață, cât și logic în cod.
+        </p>
 
         <ol>
           <li>
             <h3 id="fieldset">Elementele (fieldset) și (legend)</h3>
+            <p>
+              Elementul <b> (fieldset) </b> este un container pentru gruparea
+              mai multor elemente înrudite într-un formular, unde elementul
+              imbricat <b> (legend) </b> va îndeplini rolul de titlu de grup.
+              Butoanele radio și casetele de selectare asociate ar trebui să fie
+              întotdeauna grupate, alte tipuri de câmpuri sunt grupate în
+              funcție de necesitate.
+            </p>
+
+            <!-- Exemplu -->
+            <div class="body body1">
+              <p><b>Exemplu :</b></p>
+              <form class="form2">
+                <fieldset class="form-group">
+                  <legend class="group-title">
+                    Enter your contact details
+                  </legend>
+                  <label class="form-label">
+                    Name
+                    <input class="input2" type="text" name="username" />
+                  </label>
+                  <label class="form-label">
+                    Email
+                    <input class="input2" type="email" name="email" />
+                  </label>
+                </fieldset>
+
+                <fieldset class="form-group">
+                  <legend class="group-title">
+                    Your favourite programming language
+                  </legend>
+                  <div class="form-field">
+                    <input
+                      class="input2"
+                      type="checkbox"
+                      name="language"
+                      value="python"
+                      id="python"
+                    />
+                    <label class="form-label" for="python">Python</label>
+                  </div>
+                  <div class="form-field">
+                    <input
+                      class="input2"
+                      type="checkbox"
+                      name="language"
+                      value="js"
+                      id="js"
+                    />
+                    <label class="form-label" for="js">JavaScript</label>
+                  </div>
+                  <div class="form-field">
+                    <input
+                      class="input2"
+                      type="checkbox"
+                      name="language"
+                      value="ruby"
+                      id="ruby"
+                    />
+                    <label class="form-label" for="ruby">Python</label>
+                  </div>
+                </fieldset>
+
+                <fieldset class="form-group">
+                  <legend class="group-title">I want to receive</legend>
+                  <div class="form-field">
+                    <input
+                      class="input2"
+                      type="checkbox"
+                      name="newsletter"
+                      value="weekly"
+                      id="weekly"
+                    />
+                    <label class="form-label" for="weekly"
+                      >The weekly newsletter</label
+                    >
+                  </div>
+                  <div class="form-field">
+                    <input
+                      class="input2"
+                      type="checkbox"
+                      name="newsletter"
+                      value="offers"
+                      id="offers"
+                    />
+                    <label class="form-label" for="offers"
+                      >Offers from the company</label
+                    >
+                  </div>
+                  <div class="form-field">
+                    <input
+                      class="input2"
+                      type="checkbox"
+                      name="newsletter"
+                      value="associated_offers"
+                      id="associated_offers"
+                    />
+                    <label class="form-label" for="associated_offers"
+                      >Offers from associated companies</label
+                    >
+                  </div>
+                </fieldset>
+
+                <button type="submit">Subscribe</button>
+              </form>
+            </div>
           </li>
           <li>
             <h3 id="formatare">Gruparea cu posibilitate de formatare</h3>
+            <p>
+              Elementele <b> (fieldset) </b> și <b> (legend) </b> au o semantică
+              grozavă, dar un stil limitat. În majoritatea cazurilor, pentru a
+              grupa elementele unui formular este folosit un <b> (div) </b> cu
+              atributele de accesibilitate <b>role</b> și
+              <b>aria-labelledby</b>.
+            </p>
+            <p>
+              (div role="group" aria-labelledby="contact-details-head") <br />
+              (p id="contact-details-head")Enter your contact details(/p) <br />
+              Related elements <br />
+              (/div)
+            </p>
+            <ul>
+              <li>
+                Atributul <b>role</b>="group" indică faptul că elementele din
+                acest <b> (div) </b> fac parte din grup.
+              </li>
+              <li>
+                Atributul <b>aria-labelledby</b>="contact-details-head" conține
+                ID-ul unui element cu o descriere de grup.
+              </li>
+            </ul>
           </li>
         </ol>
 
         <!-- Exemplu -->
-        <div>
+        <div class="body body1">
           <p><b>Exemplu :</b></p>
+          <form class="form2">
+            <div
+              class="form-group1"
+              role="group"
+              aria-labelledby="contact-details-head"
+            >
+              <p id="contact-details-head">Enter your contact details</p>
+              <label class="form-label1">
+                Name
+                <input type="text" name="username" />
+              </label>
+              <label>
+                Email
+                <input type="email" name="email" />
+              </label>
+            </div>
+
+            <div
+              class="form-group1"
+              role="group"
+              aria-labelledby="language-head"
+            >
+              <p id="language-head">Your favourite programming language</p>
+              <label class="form-label1">
+                <input type="checkbox" name="language" value="python" />
+                Python
+              </label>
+              <label class="form-label1">
+                <input type="checkbox" name="language" value="js" />
+                JavaScript
+              </label>
+              <label class="form-label1">
+                <input type="checkbox" name="language" value="ruby" />
+                Ruby
+              </label>
+            </div>
+
+            <div
+              class="form-group1"
+              role="group"
+              aria-labelledby="newsletter-head"
+            >
+              <p id="newsletter-head">I want to receive</p>
+              <label class="form-label1">
+                <input type="checkbox" name="newsletter" value="weekly" />
+                The weekly newsletter
+              </label>
+              <label class="form-label1">
+                <input
+                  type="checkbox"
+                  name="newsletter"
+                  value="company_offers"
+                />
+                Offers from the company
+              </label>
+              <label class="form-label1">
+                <input
+                  type="checkbox"
+                  name="newsletter"
+                  value="associated_offers"
+                />
+                Offers from associated companies
+              </label>
+            </div>
+
+            <button type="submit">Subscribe</button>
+          </form>
         </div>
       </section>
     </main>

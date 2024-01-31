@@ -1,0 +1,208 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 10px;
+  background: yellow;
+  background: linear-gradient(
+    317deg,
+    rgb(207, 192, 52) 40%,
+    rgba(31, 170, 84, 0.44) 64%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+a {
+  display: flex;
+  text-decoration: none;
+  color: blue;
+  transition: text-decoration, color 500ms ease-in-out;
+}
+
+a:hover,
+a:focus {
+  color: red;
+  text-decoration: underline;
+}
+
+/* After & before */
+
+a::before,
+a::after {
+  content: "";
+  width: 24px;
+  height: 24px;
+  background-size: contain;
+  transition: display, color 500ms ease-in-out;
+}
+
+/* Adds and hides eyes icon after the link text */
+
+a::before {
+  margin-right: 16px;
+  background-image: url("https://cdn-icons-png.flaticon.com/512/599/599516.png");
+  display: inline;
+}
+
+a::after {
+  display: none;
+  margin-left: 16px;
+  background-image: url("https://cdn-icons-png.flaticon.com/512/599/599516.png");
+}
+
+/* Show arrow icon on hover */
+a:hover::after {
+  display: inline-block;
+}
+
+a:hover::before {
+  display: none;
+}
+
+/* button {
+  width: fit-content;
+} */
+p {
+  text-indent: 15px;
+}
+
+/* autofocus */
+.body {
+  font-family: sans-serif;
+  line-height: 1.5;
+}
+
+input {
+  padding: 8px;
+  font-family: inherit;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+}
+
+/* placeholder */
+
+/* mail&password */
+.form {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  padding: 4px;
+  font-family: inherit;
+}
+
+/* butoane radio */
+.label1 {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.radio {
+  display: flex;
+  gap: 15px;
+}
+
+/* checkbox */
+
+/* numere */
+.numere {
+  max-width: 300px;
+  margin-top: 5px;
+  padding: 8px;
+}
+
+/* date-time */
+
+/* textarea */
+textarea {
+  resize: none;
+  margin-top: 5px;
+  padding: 8px;
+}
+
+/* select */
+.body1 {
+  background-color: blueviolet;
+  padding: 10px;
+}
+
+select {
+  font-size: 16px;
+}
+
+/* fieldset si legend */
+
+.form2 {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 300px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+.group-title {
+  width: 100%;
+  font-weight: 700;
+}
+
+.form-label {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.input2 {
+  padding: 4px;
+}
+
+.form-field {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+/* gruparea cu formatare */
+.form-group1 {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.form-group1 p {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 20px;
+}
+.form-label1 {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  cursor: pointer;
+}
